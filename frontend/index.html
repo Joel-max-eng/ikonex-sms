@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ikonex Academy — SMS</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%231B4F72'/><text y='.9em' font-size='60' x='50%' text-anchor='middle' font-family='Arial' font-weight='bold' fill='white'>IA</text></svg>"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay hidden" id="mobile-overlay" onclick="closeMobileSidebar()"></div>
+
+    <!-- MOBILE TOPBAR -->
+    <div class="mobile-topbar" id="mobile-topbar">
+      <button class="btn-hamburger" onclick="toggleMobileSidebar()">
+        <i class="ti ti-menu-2"></i>
+      </button>
+      <div style="display:flex;align-items:center;gap:8px">
+        <div class="logo-mark" style="width:28px;height:28px;font-size:11px">IA</div>
+        <span style="font-weight:600;font-size:15px;color:var(--text)">Ikonex Academy</span>
+      </div>
+      <div style="width:36px"></div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-mark">IA</div>
+        <div class="logo-text">Ikonex<br><em>Academy</em></div>
+        <button class="sidebar-toggle" onclick="toggleSidebar()">
+          <i class="ti ti-chevron-left" id="toggleIcon"></i>
+        </button>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active" onclick="navigateTo('dashboard')" data-page="dashboard">
+          <i class="ti ti-layout-dashboard"></i><span>Dashboard</span>
+        </button>
+        <button class="nav-item" onclick="navigateTo('classes')" data-page="classes">
+          <i class="ti ti-school"></i><span>Class Streams</span>
+        </button>
+        <button class="nav-item" onclick="navigateTo('students')" data-page="students">
+          <i class="ti ti-users"></i><span>Students</span>
+        </button>
+        <button class="nav-item" onclick="navigateTo('subjects')" data-page="subjects">
+          <i class="ti ti-book"></i><span>Subjects</span>
+        </button>
+        <button class="nav-item" onclick="navigateTo('assessments')" data-page="assessments">
+          <i class="ti ti-pencil"></i><span>Assessments</span>
+        </button>
+        <button class="nav-item" onclick="navigateTo('results')" data-page="results">
+          <i class="ti ti-trophy"></i><span>Results</span>
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-chip">
+          <div class="avatar-sm">AD</div>
+          <div><p class="name">Admin User</p><p class="role">School Admin</p></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <div id="page-container"></div>
+    </main>
+
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <span class="modal-title" id="modalTitle">Modal</span>
+        <button class="btn btn-ghost btn-icon" onclick="closeModal()">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer" id="modalFooter"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="pages/dashboard.js"></script>
+  <script src="pages/classes.js"></script>
+  <script src="pages/students.js"></script>
+  <script src="pages/subjects.js"></script>
+  <script src="pages/assessments.js"></script>
+  <script src="pages/results.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
