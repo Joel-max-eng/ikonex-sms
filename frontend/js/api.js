@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/api';
+const API = 'https://ikonex-sms.onrender.com/api';
 
 const http = {
   get: (url) => fetch(API + url).then(r => r.json()),
